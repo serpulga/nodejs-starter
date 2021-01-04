@@ -1,3 +1,27 @@
+# OS specific
+.DS_Store
+
+# specific app settings
+.insomnia
+.git
+.rnpm
+.vscode
+*.sublime-project
+*.sublime-workspace
+
+# logs
+logs
+.logs
+*.log
+
+# runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# package managers
 node_modules
-npm-debug.log
-*.sqlite
+
+# dotenv environment variable files
+.env*
