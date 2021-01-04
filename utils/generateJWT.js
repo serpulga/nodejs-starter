@@ -11,7 +11,7 @@ const jwt = require("jsonwebtoken");
 
 /**
  * generate the json web token that we'll use for authentication
- * 
+ *
  * @since 1.0.0
  * @category authentication
  * @param    {Any} id The user ID
@@ -21,22 +21,22 @@ const jwt = require("jsonwebtoken");
  * @returns  {Object} The generated JWT
  */
 
-const generateJWT = ({ id, email, name, surname }) => {
-    const today = new Date();
-    const expirationDate = new Date(today);
+const generateJWT = ({id, email, name, surname}) => {
+  const today = new Date();
+  const expirationDate = new Date(today);
 
-    expirationDate.setDate(today.getDate() + 60);
+  expirationDate.setDate(today.getDate() + 60);
 
-    return jwt.sign(
-        {
-            id,
-            email,
-            name,
-            surname,
-            exp: parseInt(expirationDate.getTime() / 1000, 10)
-        },
-        process.env.JWT_SECRET
-    );
+  return jwt.sign(
+    {
+      id,
+      email,
+      name,
+      surname,
+      exp: parseInt(expirationDate.getTime() / 1000, 10),
+    },
+    process.env.JWT_SECRET,
+  );
 };
 
 module.exports = generateJWT;
