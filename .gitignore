@@ -24,4 +24,7 @@ pids
 node_modules
 
 # dotenv environment variable files
-.env*
+.env
+
+# ignore local databases
+*.sqlite
